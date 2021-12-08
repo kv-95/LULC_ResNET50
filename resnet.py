@@ -69,15 +69,15 @@ class model():
         self.model.add(tf.keras.applications.ResNet50(include_top=False, weights='imagenet', pooling=None))
         
         self.model.add(tf.keras.layers.Conv2D(128, 3, padding="same", activation="relu"))
-        self.model.add(tf.keras.layers.Dropout(0.1))
+        self.model.add(tf.keras.layers.Dropout(0.2))
 
-        self.model.add(tf.keras.layers.Conv2D(128, 1, padding='same', activation="relu"))
+        self.model.add(tf.keras.layers.Conv2D(64, 3, padding='same', activation="relu"))
         self.model.add(tf.keras.layers.MaxPooling2D(pool_size=(2, 2)))
 
         self.model.add(tf.keras.layers.Conv2D(256, 1, padding="same", activation="relu"))
-        self.model.add(tf.keras.layers.Dropout(0.2))
+        self.model.add(tf.keras.layers.Dropout(0.4))
 
-        self.model.add(tf.keras.layers.Conv2D(512, 1, padding='same', activation="relu"))
+        self.model.add(tf.keras.layers.Conv2D(128, 1, padding='same', activation="relu"))
         self.model.add(tf.keras.layers.MaxPooling2D(pool_size=(2, 2)))
         
         self.model.add(tf.keras.layers.Flatten())
